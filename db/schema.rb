@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121205100519) do
+ActiveRecord::Schema.define(:version => 20121205114101) do
 
   create_table "movies", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,16 @@ ActiveRecord::Schema.define(:version => 20121205100519) do
     t.string   "tagline"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviewers", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "review"
+    t.integer  "rate"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "movie_id"
   end
 
 end

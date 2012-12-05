@@ -1,19 +1,5 @@
 MovieReview::Application.routes.draw do
 
-  get "reviewers/index"
-
-  get "reviewers/new"
-
-  get "reviewers/create"
-
-  get "reviewers/edit"
-
-  get "reviewers/show"
-
-  get "reviewers/destroy"
-
-  get "reviewers/update"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -60,7 +46,9 @@ MovieReview::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :movies
+  resources :movies do
+    resources :reviewers
+  end
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
