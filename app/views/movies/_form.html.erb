@@ -1,0 +1,16 @@
+<%= form_for @movie do |f|%>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  
+  <%= f.label :genre %>:
+  <%= f.text_field :genre %><br />
+
+  <%= f.label :language %>:
+  <%= f.text_field :language %><br />
+
+  <%= f.label :tagline %>:
+  <%= f.text_field :tagline %><br />
+  
+  <%= f.submit %>
+  
+<% end %>
