@@ -1,2 +1,4 @@
-<h1>Reviewers#index</h1>
-<p>Find me in app/views/reviewers/index.html.erb</p>
+<% @movie.reviews.each do |rev| %>
+  <%= rev.name %>
+  Review: <%= rev.review %>
+<% end %>

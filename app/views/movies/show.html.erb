@@ -1,4 +1,33 @@
-<%= @movie.name %><br />
-<%= @movie.genre %><br />
-<%= @movie.language %><br />
-<%= @movie.tagline %><br />
+<p>
+	<b>Movie Name:</b>
+  <%= @movie.name %><br />
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @movie.genre %><br />
+</p>
+
+<p>
+  <b>Language</b>
+  <%= @movie.language %><br />
+</p>
+
+<p>
+  <b>Tagline: </b>
+  <%= @movie.tagline %><br />
+</p>
+
+<h2>Add a Review:</h2>
+
+<%= form_for([@movie, @movie.reviews.build]) do |f| %>
+
+    <%= f.label :reviewer %><br />
+    <%= f.text_field :reviewer %><br />
+
+    <%= f.label :body %><br />
+    <%= f.text_area :body %><br />
+ 
+    <%= f.submit %>
+
+<% end %>
