@@ -1,6 +1,12 @@
-<div id="logo"><h1>Movie_Review</h1></div><nav>
-<ul>
-	<li><% link_to("Add Movies",new_movie_path) %></li>
-</ul>
+<div id="logo"><h1>Movie_Review</h1></div>
+<nav>
+  <ul>
+    <li><%= link_to("Home", movies_path) %> </li>
+    <li><%= link_to("Add Movies",new_movie_path)%></li> 
+  </ul>
 </nav>
-<%= render "form" %>
+<div id="main_content">
+	<div class="display_box">
+	<%= render "form" %>
+	</div>
+</div>

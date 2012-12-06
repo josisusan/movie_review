@@ -1,3 +1,12 @@
+<div id="logo"><h1>Movie_Review</h1></div>
+<nav>
+  <ul>
+    <li><%= link_to("Home", movies_path) %> </li>
+    <li><%= link_to("Add Movies",new_movie_path)%></li> 
+  </ul>
+</nav>
+<div id="main_content">
+<div class="display_box">
 <p>
 	<b>Movie Name:</b>
   <%= @movie.name %><br />
@@ -17,17 +26,32 @@
   <b>Tagline: </b>
   <%= @movie.tagline %><br />
 </p>
+</div>
 
-<h2>Add a Review:</h2>
+<h4>Reviews:</h4>
 
-<%= form_for([@movie, @movie.reviews.build]) do |f| %>
-
-    <%= f.label :reviewer %><br />
-    <%= f.text_field :reviewer %><br />
-
-    <%= f.label :body %><br />
-    <%= f.text_area :body %><br />
- 
-    <%= f.submit %>
+<% @movie.reviews.each do |review| %>
+<div class="display_box">
+		Reviewer: &nbsp;
+    <%= review.reviewer%>
+	<p>
+		<%= review.body %>
+	</p><br />
+</div>
 
 <% end %>
+
+<div class="display_box">
+<h4>Add a Review:</h4>
+<%= form_for([@movie, @movie.reviews.build]) do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :reviewer %><br />
+  <%= f.text_field :reviewer %><br />
+  <%= f.label :body %><br />
+  <%= f.text_area :body %><br />
+  <%= f.submit %>
+<% end %>
+
+</div>
+
+</div>

@@ -2,5 +2,6 @@ class Review < ActiveRecord::Base
   belongs_to :movie
   attr_accessible :body, :reviewer
 
-  belongs_to :movie
+  validates :body ,:presence => true
+  validates :reviewer , :presence => true
 end
